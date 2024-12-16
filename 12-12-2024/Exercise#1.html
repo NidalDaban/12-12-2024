@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <style>
+
+        * 
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ddd;
+        }
+
+        .container
+        {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: auto;
+            height: 90%;
+            width: 90%;
+            background-color: #1B203D;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .sidebar
+        {
+            padding: 20px;
+            background-color: #15172C;
+        }
+        .sidebar .logo 
+        {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: white;
+        }
+        .logo-m 
+        {
+            color: red;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li.active, 
+        .sidebar ul li:hover {
+            background-color: #4C4F6A;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #1B203D;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+        }
+
+        .user-info {
+            text-align: right;
+        }
+
+        .user-info span {
+            display: block;
+        }
+
+        .stats 
+        {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .stat 
+        {
+            background-color: #4C4F6A;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .stat h3 
+        {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        
+        .projects 
+        {
+            background-color: #2E3349;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .project-header
+        {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .project-header button, 
+        .sales-header button 
+        {
+            background: #FF4747;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        table 
+        {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td 
+        {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #4C4F6A;
+        }
+
+        th 
+        {
+            color: red;
+        }
+
+        .sales {
+            background-color: #2E3349;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .progress-circle {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            background: conic-gradient(red 70%, #4C4F6A 0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: white;
+            position: relative;
+        }
+
+        .progress-circle::before {
+            content: "";
+            width: 120px;
+            height: 120px;
+            background: #2E3349;
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .progress-circle span {
+            position: relative;
+            z-index: 1;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2 class="logo" ><span class="logo-m">M-</span>SoftTech</h2>
+            <nav>
+                <ul>
+                    <li class="choosed">Dashboard</li>
+                    <li>Customers</li>
+                    <li>Projects</li>
+                    <li>Orders</li>
+                    <li>Inventory</li>
+                    <li>Accounts</li>
+                    <li>Tasks</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="Dashboard">
+            <header class="header">
+                <h1>Dashboard</h1>
+                <div class="user-info">
+                    <span>Manoj Adhikari</span>
+                </div>
+            </header>
+
+            <section class="stats">
+                <div class="stat">
+                    <h3>67</h3>
+                    <p>Customers</p>
+                </div>
+                <div class="stat">
+                    <h3>88</h3>
+                    <p>Projects</p>
+                </div>
+                <div class="stat">
+                    <h3>99</h3>
+                    <p>Orders</p>
+                </div>
+                <div class="stat">
+                    <h3>78</h3>
+                    <p>Task</p>
+                </div>
+            </section>
+
+            <section class="Projects">
+                <div class="Project-header">
+                    <h3>Top Seeling Projects</h3>
+                    <button>Sell All</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Contact</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>Maria Anders</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr>
+                            <td>Centro comercial Moctezuma</td>
+                            <td>Francisco Chang</td>
+                            <td>Mexico</td>
+                        </tr>
+                        <tr>
+                            <td>Ernst Handel</td>
+                            <td>Roland Mendel</td>
+                            <td>Austria</td>
+                        </tr>
+                        <tr>
+                            <td>Island Trading</td>
+                            <td>Helen Bennett</td>
+                            <td>UK</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="sales">
+                <div class="sales-header">
+                    <h3>Total Sale</h3>
+                    <button>Sell All</button>
+                </div>
+                <div class="progress-circle">
+                    <span>70%</span>
+                </div>
+            </section>
+        </main>
+    </div>    
+</body>
+</html>
